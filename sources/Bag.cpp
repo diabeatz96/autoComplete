@@ -4,16 +4,38 @@
 
 #include "Bag.h"
 
-void Bag::checkValue() {
-
-}
 
 void Bag::displayAll() {
 
+    int textPosX = 230;
+    int textPosY = 150;
+
+    for(int i = 0; i <= animeList.size() - 1; i++) {
+        textPosY += 20;
+        DrawText(const_cast<char*>(animeList[i].c_str()), textPosX, textPosY, 20, BLACK);
+    }
 }
 
 void Bag::searchAutoComplete() {
+    int textPosX = 230;
+    int textPosY = 150;
 
+    string freshName;
+    char character = 'a';
+    int counter = 0;
+
+    while(character != '\0') {
+        freshName += input[counter];
+        character = input[counter];
+        counter++;
+    }
+
+    for(int i = 0; i < animeList.size() - 1; i++) {
+        if (animeList[i].find(input) < animeList[i].length()) {
+            textPosY += 20;
+            DrawText(const_cast<char*>(animeList[i].c_str()), textPosX, textPosY, 20, BLACK);
+        }
+    }
 }
 
 
@@ -37,6 +59,15 @@ const vector<string> &Bag::getAnimeList() const {
 void Bag::setAnimeList(const vector<string> &animeList) {
     Bag::animeList = animeList;
 }
+
+int Bag::getLetterCount() const {
+    return letterCount;
+}
+
+void Bag::setLetterCount(int letterCount) {
+    Bag::letterCount = letterCount;
+}
+
 
 /** Load File Helper Method*/
 

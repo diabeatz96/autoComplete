@@ -6,6 +6,8 @@
 #include "vector"
 #include "iostream"
 #include "fstream"
+#include "raylib.h"
+
 #ifndef TESTPROJECT_BAG_H
 #define TESTPROJECT_BAG_H
 
@@ -18,6 +20,10 @@ public:
     int numOfItems;
     char input[MAX_INPUT + 1] = "\0";
     int letterCount = 0;
+
+    int getLetterCount() const;
+
+    void setLetterCount(int letterCount);
 
     // Vector method best way. Can use Static if we really about that life.
     vector<string> animeList;

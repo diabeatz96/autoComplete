@@ -26,26 +26,36 @@ int main() {
 
         while (key > 0) {
             if(key) {
-                name[letterCount] = static_cast<char>(key);
-                name[letterCount + 1] = '\0';
-                letterCount++;
+                newBag.input[newBag.letterCount] = static_cast<char>(key);
+                newBag.input[newBag.letterCount + 1] = '\0';
+                newBag.letterCount++;
              }
             key = GetCharPressed();
         }
             if(IsKeyPressed(KEY_BACKSPACE)) {
-                letterCount--;
-                if(letterCount < 0) {
-                    letterCount = 0;
+                newBag.letterCount--;
+                if(newBag.letterCount< 0) {
+                    newBag.letterCount = 0;
                 }
-                name[letterCount] = '\0';
+                newBag.input[newBag.letterCount] = '\0';
             }
-
 
 
 
         BeginDrawing();
 
-        ClearBackground(BLUE);
+
+
+        DrawText("TEXT SEARCH", GetScreenWidth()/2 - 170, 40, 45, BLACK);
+        DrawText(newBag.input, 240, 140, 20, BLACK);
+
+
+        if (newBag.getLetterCount() > 2) {
+            newBag.searchAutoComplete();
+        } else {
+            newBag.displayAll();
+        }
+        ClearBackground(RAYWHITE);
 
         EndDrawing();
     }
