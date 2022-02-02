@@ -23,7 +23,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\Users\bigbl\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6461.75\bin\cmake\win\bin\cmake.exe --regenerate-during-build -SC:\Users\bigbl\CLionProjects\testproject\cmake-build-debug\_deps\raylib-subbuild -BC:\Users\bigbl\CLionProjects\testproject\cmake-build-debug\_deps\raylib-subbuild
+  command = C:\Users\bigbl\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\cmake\win\bin\cmake.exe --regenerate-during-build -SC:\Users\bigbl\CLionProjects\testproject\cmake-build-debug\_deps\raylib-subbuild -BC:\Users\bigbl\CLionProjects\testproject\cmake-build-debug\_deps\raylib-subbuild
   description = Re-running CMake...
   generator = 1
 
@@ -32,7 +32,7 @@ rule RERUN_CMAKE
 # Rule for cleaning all built files.
 
 rule CLEAN
-  command = C:\Users\bigbl\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6461.75\bin\ninja\win\ninja.exe $FILE_ARG -t clean $TARGETS
+  command = C:\Users\bigbl\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\ninja\win\ninja.exe $FILE_ARG -t clean $TARGETS
   description = Cleaning all built files...
 
 
@@ -40,6 +40,6 @@ rule CLEAN
 # Rule for printing all primary targets available.
 
 rule HELP
-  command = C:\Users\bigbl\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6461.75\bin\ninja\win\ninja.exe -t targets
+  command = C:\Users\bigbl\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\ninja\win\ninja.exe -t targets
   description = All primary targets available:
 
