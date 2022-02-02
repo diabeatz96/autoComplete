@@ -10,11 +10,14 @@
 #define TESTPROJECT_BAG_H
 
 using namespace std;
+const int MAX_INPUT = 20;
 
 class Bag {
 
 public:
     int numOfItems;
+    char input[MAX_INPUT + 1] = "\0";
+    int letterCount = 0;
 
     // Vector method best way. Can use Static if we really about that life.
     vector<string> animeList;

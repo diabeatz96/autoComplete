@@ -38,13 +38,22 @@ void Bag::setAnimeList(const vector<string> &animeList) {
     Bag::animeList = animeList;
 }
 
+/** Load File Helper Method*/
+
 void Bag::loadFile() {
     ifstream inFile;
     string line;
-    inFile.open("scratch.txt");
+    inFile.open("C:\\Users\\Adam\\CLionProjects\\autoComplete\\assests\\scratch.txt"); //Absolute path for now cause im bad.
 
-    while(inFile >> line) {
-        animeList.push_back(line);
+    /* Check if file is open, if it isn't we are going to push a value into animelist in the vector */
+    if(inFile.is_open()) {
+        while (std::getline(inFile, line)) {
+            animeList.push_back(line);
+            cout << line;
+        }
+        inFile.close();
+    } else {
+        cout << "This shit broke";
     }
 }
 
